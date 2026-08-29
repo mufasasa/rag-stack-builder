@@ -8,11 +8,13 @@ import urllib.request
 
 MODEL = "voyage-4"
 ENDPOINT = "https://api.voyageai.com/v1/embeddings"
-# Free-tier Voyage keys enforce low RPM/TPM caps; keep batches small and treat
-# 429 as "wait and retry", not an error. ~16 chunks ≈ 9K tokens per request.
-BATCH = 16
-MAX_429_RETRIES = 40
-RETRY_WAIT_S = 25
+# Free-tier Voyage keys enforce ~10K tokens/minute. Pace under the ceiling:
+# 8 chunks ≈ 4.5K tokens per request, 30s between requests ≈ 9K TPM sustained.
+# 429 still means "wait a full window and retry", never an error.
+BATCH = 8
+INTER_BATCH_SLEEP_S = 30
+MAX_429_RETRIES = 60
+RETRY_WAIT_S = 61
 
 
 def embed_texts(texts: list, input_type: str = "document") -> list:
@@ -49,6 +51,8 @@ def embed_texts(texts: list, input_type: str = "document") -> list:
                 time.sleep(2 ** attempt)
         if (i // BATCH) % 10 == 0:
             print(f"    embedded batch {i // BATCH + 1}/{total}", flush=True)
+        if i + BATCH < len(texts):
+            time.sleep(INTER_BATCH_SLEEP_S)
     return out
 
 

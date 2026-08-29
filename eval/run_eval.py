@@ -58,11 +58,16 @@ SOLUTION_SYSTEM_PROMPT = (
 )
 
 
+SEARCH_MODE = "vector"      # set per iteration via --mode
+SEARCH_REWRITE = False      # set per iteration via --rewrite
+
+
 def _search(query: str) -> list:
     import sys as _sys
     _sys.path.insert(0, str(HERE.parent / "mcp_server"))
     import server as libserver  # same retrieval code the MCP hosts use
-    return libserver.search_corpus(query, DOMAIN, K)
+    return libserver.search_corpus_ex(query, DOMAIN, K,
+                                      mode=SEARCH_MODE, rewrite=SEARCH_REWRITE)
 
 
 def _solution_user_message(q: dict) -> tuple:
@@ -120,7 +125,11 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--condition", required=True, choices=["baseline", "solution"])
     ap.add_argument("--tag", required=True, help="run tag, e.g. baseline-2026-08-29")
+    ap.add_argument("--mode", default="vector", choices=["vector", "hybrid"])
+    ap.add_argument("--rewrite", action="store_true")
     args = ap.parse_args()
+    global SEARCH_MODE, SEARCH_REWRITE
+    SEARCH_MODE, SEARCH_REWRITE = args.mode, args.rewrite
 
     questions = yaml.safe_load((HERE / "questions.yaml").read_text())
     outdir = HERE / "runs" / args.condition / args.tag
