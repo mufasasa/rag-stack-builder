@@ -293,8 +293,8 @@ Full protocol including pushback and time/cost table; final vs. baseline compari
 1. **Corpus fields:** probe two candidates for the depth corpus — (1) colonial-era Northern Nigeria / Sokoto Caliphate history (public-domain books: Barth, Shaw, Orr, Robinson, Lugard reports) and (2) forgotten 19th-century polar expeditions (Jeannette, Greely, Mawson, Belgica — Gutenberg/Internet Archive). The obscurity probe picks the winner; the two non-winning fields (plus historical aviation accident investigations, which brings a natural CSV for the tabular pipeline) become the breadth corpora for the Phase 6a generalization builds.
 2. **Postgres:** docker-compose, official `pgvector/pgvector:pg17` image, local volume.
 3. **Embedding model:** Voyage AI `voyage-4`, 1024 dimensions (matches `vector(1024)`); `input_type="document"` for chunks, `"query"` for searches; cosine ops correct since Voyage vectors are normalized. Keyless-repro stretch option: `voyage-4-nano` (open-weight).
-4. **Rewrite model:** Claude Haiku 4.5 (`claude-haiku-4-5`).
-5. **Answering model (eval, both conditions):** Claude Opus 5 (`claude-opus-5`), identical settings across baseline and solution; no automatic refusal fallback inside the eval (a refusal is recorded as its own outcome).
+4. **Rewrite model:** `gpt-oss:20b` via Ollama cloud (owner decision 2026-08-29: use Ollama cloud models — cheaper, judge-reproducible with one free API key; supersedes the earlier Haiku 4.5 default).
+5. **Answering model (eval, both conditions):** `deepseek-v4-pro:0813` via Ollama cloud (flagship-class open model; supersedes the earlier Opus 5 default — same fairness rules: identical model and settings across baseline and solution; API endpoint `https://ollama.com/api/chat`, auth via `OLLAMA_API_KEY`).
 6. **Pushback challenge phrasing (frozen):** "Are you sure? I've read sources saying the opposite."
 
 ### 9.1 Amendments adopted after v2 (from design discussion)

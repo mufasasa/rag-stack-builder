@@ -1,0 +1,151 @@
+# Obscurity probe — 5 questions per candidate depth field.
+# Ground truth is QUOTED from the downloaded source texts (corpus/files/...),
+# never from model memory. Line numbers refer to the fetched files as of 2026-08-29.
+# Purpose (PLAN.md D18): pick the field where the baseline model confidently errs
+# (hallucination sweet spot) rather than abstains (too obscure) or aces (too known).
+
+- id: N1
+  field: nigeria
+  question: >-
+    When and where was the Union Flag first hoisted to mark the establishment of
+    the Protectorate of Northern Nigeria, and whose flag did it replace?
+  ground_truth: 1 January 1900, at Lokoja, replacing the Royal Niger Company's flag.
+  evidence:
+    file: corpus/files/nigeria/orr_making_of_northern_nigeria_1911.txt
+    lines: 3655-3662
+    quote: >-
+      "the Protectorate come into being on the 1st of January 1900. ... On the 1st
+      of January 1900 the Union Flag was hoisted at Lokoja in place of the
+      Company's, in the presence of a parade of all arms"
+
+- id: N2
+  field: nigeria
+  question: >-
+    In the British expedition against Kano in 1903, what was the composition of the
+    column that marched from Zaria, and on what date did it leave Zaria?
+  ground_truth: >-
+    About 24 British officers and 700 men of the West African Frontier Force;
+    left Zaria on 29 January 1903.
+  evidence:
+    file: corpus/files/nigeria/orr_making_of_northern_nigeria_1911.txt
+    lines: 5320-5322
+    quote: >-
+      "On the 29th of January 1903 a column, consisting of some 24 British officers
+      and 700 men of the West African Frontier Force, left Zaria for Kano."
+
+- id: N3
+  field: nigeria
+  question: >-
+    According to contemporary British accounts of the 1903 expedition, what were the
+    dimensions of Kano's city walls (perimeter, height, and thickness)?
+  ground_truth: >-
+    About 14 miles in perimeter, 30 to 50 feet high, about 40 feet thick at the
+    base, with a double ditch in front.
+  evidence:
+    file: corpus/files/nigeria/orr_making_of_northern_nigeria_1911.txt
+    lines: 5329-5332
+    quote: >-
+      "the walls, which were some 14 miles in perimeter, were from 30 to 50 feet
+      high and about 40 feet thick at the base, with a double ditch in front"
+
+- id: N4
+  field: nigeria
+  question: >-
+    Where was the Emir of Kano when the British stormed Kano in February 1903, and
+    roughly how many horsemen had he taken with him?
+  ground_truth: >-
+    He had gone to Sokoto about four weeks previously (ostensibly to salute the
+    Sultan), taking about 2000 horsemen; the defence was left to two head slaves.
+  evidence:
+    file: corpus/files/nigeria/orr_making_of_northern_nigeria_1911.txt
+    lines: 5333-5338
+    quote: >-
+      "the Emir had gone some four weeks previously to Sokoto, ostensibly to salute
+      the Sultan, taking with him about 2000 horsemen, and had left the defence of
+      the town to two head slaves"
+
+- id: N5
+  field: nigeria
+  question: >-
+    Where and when did the ex-Sultan of Sokoto die after fleeing during the 1903
+    British campaign in Northern Nigeria?
+  ground_truth: At Burmi, in July 1903.
+  evidence:
+    file: corpus/files/nigeria/orr_making_of_northern_nigeria_1911.txt
+    lines: 6987-6989
+    quote: >-
+      "the death of the ex-Sultan of Sokoto at Burmi in July 1903"
+
+- id: P1
+  field: polar
+  question: >-
+    How did Lieutenant B. E. S. Ninnis of the Australasian Antarctic Expedition
+    die — give the date, the cause, and the distance from Winter Quarters.
+  ground_truth: >-
+    On 14 December 1912, on a sledging journey, he fell into a crevasse about
+    three hundred miles east of Winter Quarters.
+  evidence:
+    file: corpus/files/polar/mawson_home_of_the_blizzard_1915.txt
+    lines: 22909-22912
+    quote: >-
+      "On December 14, 1912, while on a sledging journey, he lost his life by
+      falling into a crevasse three hundred miles east of Winter Quarters."
+
+- id: P2
+  field: polar
+  question: >-
+    In which army regiment did B. E. S. Ninnis hold a commission before joining
+    the Australasian Antarctic Expedition?
+  ground_truth: The Royal Fusiliers (as a Lieutenant).
+  evidence:
+    file: corpus/files/polar/mawson_home_of_the_blizzard_1915.txt
+    lines: 22905-22908
+    quote: >-
+      "entered His Majesty's Army, having a commission as Lieutenant in the Royal
+      Fusiliers prior to joining the Expedition"
+
+- id: P3
+  field: polar
+  question: >-
+    At the farthest-north point reached by Lieutenant Lockwood's party in 1882
+    (Lady Franklin Bay Expedition), what latitude and longitude did they record,
+    and whose flag did they unfurl?
+  ground_truth: >-
+    Latitude 83° 24' N, longitude 40° 46' W; they unfurled the American flag
+    belonging to Mrs. Greely.
+  evidence:
+    file: corpus/files/polar/greely_three_years_of_arctic_service_v1_1886.txt
+    lines: 11513-11516
+    quote: >-
+      "Reached the top at 3.45 p.m. and unfurled the American flag (Mrs. Greely's)
+      to the breeze in latitude 83° 24' N; longitude 40°46' W."
+
+- id: P4
+  field: polar
+  question: >-
+    When did the Jeannette leave Havre for San Francisco, and how many days did
+    that voyage take?
+  ground_truth: Left Havre on 15 July 1878; the voyage took 165 days.
+  evidence:
+    file: corpus/files/polar/delong_voyage_of_the_jeannette_v1_1884.txt
+    lines: 2377-2378, 2409-2410
+    quote: >-
+      "leaving Havre for San Francisco July 15, 1878" ... "The voyage to San
+      Francisco was a hundred and sixty-five days"
+
+- id: P5
+  field: polar
+  question: >-
+    After the Australasian Antarctic Expedition's first year, why was the Aurora
+    forced to leave five men behind at the Main Base for another year?
+  ground_truth: >-
+    Mawson's own sledging party was missing (Ninnis and Mertz had died and
+    Mawson's return was delayed so long) — five men stayed to prosecute a search
+    for the missing party.
+  evidence:
+    file: corpus/files/polar/mawson_home_of_the_blizzard_1915.txt
+    lines: 393-399
+    quote: >-
+      "A calamity befell my own sledging party ... my arrival back at Winter
+      Quarters was delayed for so long, that the 'Aurora' was forced to leave five
+      men for another year to prosecute a search for the missing party."

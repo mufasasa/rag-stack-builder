@@ -1,0 +1,27 @@
+{
+  "id": "P4",
+  "field": "polar",
+  "model": "deepseek-v4-pro:0813",
+  "system_prompt": "You are a knowledgeable assistant. Answer the question directly and concisely, stating specific facts (dates, names, numbers) where relevant.",
+  "question": "When did the Jeannette leave Havre for San Francisco, and how many days did that voyage take?",
+  "ground_truth": "Left Havre on 15 July 1878; the voyage took 165 days.",
+  "evidence": {
+    "file": "corpus/files/polar/delong_voyage_of_the_jeannette_v1_1884.txt",
+    "lines": "2377-2378, 2409-2410",
+    "quote": "\"leaving Havre for San Francisco July 15, 1878\" ... \"The voyage to San Francisco was a hundred and sixty-five days\""
+  },
+  "response": {
+    "model": "deepseek-v4-pro:0813",
+    "created_at": "2026-08-29T22:27:16.122138303Z",
+    "message": {
+      "role": "assistant",
+      "content": "The Jeannette left Le Havre on **June 29, 1878**, and arrived in San Francisco on **December 27, 1878**, making the voyage **181 days**.",
+      "thinking": "We need answer question. Need know Jeannette expedition. USS Jeannette left Le Havre? The Jeannette was formerly HMS Pandora, purchased by James Gordon Bennett, converted, sailed from Le Havre to San Francisco? Need dates and duration. Let's recall. Jeannette Arctic expedition. Ship departed San Francisco on July 8, 1879. Before that, after purchase, she sailed from Le Havre, France, to San Francisco around Cape Horn? I need exact departure from Havre and voyage days. The Jeannette left Le Havre on June? 1878? Let's recall.\n\nThe USS Jeannette was originally Royal Navy gunboat HMS Pandora. James Gordon Bennett bought her in 1878, renamed Jeannette after his sister. She sailed from Le Havre to San Francisco via Cape Horn, arriving? I remember: \"The Jeannette sailed from Le Havre on June 29, 1878, and reached San Francisco on December 27, 1878, after a voyage of 181 days.\" Need verify. Let's search memory internally.\n\nJeannette expedition timeline: \n- 1878: Bennett purchased Pandora, renamed Jeannette. \n- She left Le Havre on July 15? Hmm.\n- Arrived San Francisco in December 1878 after 166 days? \nLet's recall from books: \"The Jeannette left Le Havre on the 15th of July, 1878, and arrived at San Francisco on the 27th of December, 1878, making the passage in 165 days.\" Hmm.\n\nLet's investigate from memory. The ship was a former British gunboat, 142 feet, bark-rigged. It sailed from Le Havre to San Francisco around Cape Horn, a voyage of about 165 days. I remember exact: \"left Havre July 15, 1878, arrived San Francisco December 27, 1878, after a passage of 165 days.\" Let's calculate: July 15 to Dec 27 inclusive? July 16-31 =16 days, Aug 31, Sep 30, Oct 31, Nov 30, Dec 27 =? 16+31+30+31+30+27=165. Yes if departed July 15 and arrived Dec 27, duration 165 days. That seems plausible. But I have also seen June 29 and 181 days. Need determine.\n\nLet's recall exact from \"In the Kingdom of Ice\" by Hampton Sides? It says Bennett bought Pandora, had it refitted in England, then \"On June 29, 1878, the Jeannette set sail from Le Havre, France, bound for San Francisco. She arrived on December 27, 1878, after a voyage of 181 days.\" Hmm June 29 to Dec 27 =181 days? Let's calculate: June 30? From June 29 to Dec 27: July 31 + Aug 31 + Sep 30 + Oct 31 + Nov 30 + Dec 27 =180? Plus June 30? If departure June 29, days remaining in June: 1? June 29 to June 30 =1, plus July-Dec =180? 1+31+31+30+31+30+27 =181. Yes. That matches 181 days. Which date is correct? I need be accurate.\n\nLet's recall details: The Jeannette (ex-Pandora) was purchased in 1877? It sailed from Le Havre on June 29, 1878, under Captain George W. De Long? Wait De Long was in command for voyage from Le Havre to San Francisco? Yes. It arrived San Francisco December 27, 1878. I remember \"181 days\" from something. Let's verify.\n\nThe ship had been at Cowes? The owner Bennett was in Europe. It departed Le Havre on \"June 29, 1878\" and reached San Francisco on \"December 27, 1878\" after a voyage of 181 days. This rings strong. The July 15 date maybe departure from England after refit? Let's see.\n\nHMS Pandora was purchased in 1878, renamed Jeannette. She sailed from Le Havre on June 29, 1878. I recall from Wikipedia: \"Jeannette departed Le Havre on 29 June 1878, bound for San Francisco, where she arrived on 27 December 1878 after a voyage of 181 days.\" Yes likely. The question asks \"When did the Jeannette leave Havre for San Francisco, and how many days did that voyage take?\" Answer: June 29, 1878; 181 days. Need final concise."
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 5024404313,
+    "prompt_eval_count": 54,
+    "eval_count": 1041
+  }
+}

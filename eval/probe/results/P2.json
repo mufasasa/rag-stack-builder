@@ -1,0 +1,27 @@
+{
+  "id": "P2",
+  "field": "polar",
+  "model": "deepseek-v4-pro:0813",
+  "system_prompt": "You are a knowledgeable assistant. Answer the question directly and concisely, stating specific facts (dates, names, numbers) where relevant.",
+  "question": "In which army regiment did B. E. S. Ninnis hold a commission before joining the Australasian Antarctic Expedition?",
+  "ground_truth": "The Royal Fusiliers (as a Lieutenant).",
+  "evidence": {
+    "file": "corpus/files/polar/mawson_home_of_the_blizzard_1915.txt",
+    "lines": "22905-22908",
+    "quote": "\"entered His Majesty's Army, having a commission as Lieutenant in the Royal Fusiliers prior to joining the Expedition\""
+  },
+  "response": {
+    "model": "deepseek-v4-pro:0813",
+    "created_at": "2026-08-29T22:27:08.472552632Z",
+    "message": {
+      "role": "assistant",
+      "content": "B. E. S. Ninnis held a commission in the **Royal Fusiliers (City of London Regiment)** before joining the Australasian Antarctic Expedition.",
+      "thinking": "We need answer question. Need know B. E. S. Ninnis. Belgrave Edward Sutton Ninnis, lieutenant in Royal Fusiliers? He was British army officer, joined AAE as dog handler. Before expedition he held commission in Royal Fusiliers (City of London Regiment). Let's verify. B.E.S. Ninnis was Lieutenant in the Royal Fusiliers.Yes. Final concise."
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 1018038206,
+    "prompt_eval_count": 57,
+    "eval_count": 121
+  }
+}

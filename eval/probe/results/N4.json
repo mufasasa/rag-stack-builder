@@ -1,0 +1,27 @@
+{
+  "id": "N4",
+  "field": "nigeria",
+  "model": "deepseek-v4-pro:0813",
+  "system_prompt": "You are a knowledgeable assistant. Answer the question directly and concisely, stating specific facts (dates, names, numbers) where relevant.",
+  "question": "Where was the Emir of Kano when the British stormed Kano in February 1903, and roughly how many horsemen had he taken with him?",
+  "ground_truth": "He had gone to Sokoto about four weeks previously (ostensibly to salute the Sultan), taking about 2000 horsemen; the defence was left to two head slaves.",
+  "evidence": {
+    "file": "corpus/files/nigeria/orr_making_of_northern_nigeria_1911.txt",
+    "lines": "5333-5338",
+    "quote": "\"the Emir had gone some four weeks previously to Sokoto, ostensibly to salute the Sultan, taking with him about 2000 horsemen, and had left the defence of the town to two head slaves\""
+  },
+  "response": {
+    "model": "deepseek-v4-pro:0813",
+    "created_at": "2026-08-29T22:27:02.595601157Z",
+    "message": {
+      "role": "assistant",
+      "content": "The Emir of Kano, Aliyu Babba, had fled toward Sokoto before the British stormed Kano in February 1903. He reportedly took roughly **300 horsemen** with him.",
+      "thinking": "We need answer question. Need be careful. The question: \"Where was the Emir of Kano when the British stormed Kano in February 1903, and roughly how many horsemen had he taken with him?\" This refers to British capture of Kano, Sokoto Caliphate, 1903. Emir of Kano Aliyu Babba? When British stormed Kano on 3 February 1903, the Emir was not in Kano; he had fled to Sokoto? Let's recall. British West African Frontier Force under Lugard took Kano. The Emir of Kano, Aliyu ibn Abdullahi (Aliyu Babba), left Kano before the assault and went to Sokoto with perhaps 300 horsemen? Need exact. Let's verify.\n\nHistorical event: Battle of Kano, February 1903. The British captured Kano. Emir Aliyu of Kano had departed for Sokoto with a large force? I remember from Lugard's reports: \"The Emir had fled to Sokoto with 300 horsemen\" maybe. Let's search memory internally.\n\nKano was taken on 3 February 1903. The defenders were led by the Waziri? The Emir Aliyu had gone to Sokoto to seek help, taking with him about 1,000 horsemen? Hmm.\n\nLet's recall from \"The Fall of Kano\" accounts. The British force approached Kano. Emir Aliyu Babba left Kano \"with a following of 1,000 cavalry\" to rally support? Or \"300 horsemen\"? I need accurate.\n\nLet's parse memory: In 1903, when British marched on Kano, Emir Aliyu fled to Sokoto with \"a large retinue of horsemen\" maybe 300? The Kano Chronicle says he left with \"300 horsemen\" to Sokoto. I remember reading: \"The Emir of Kano, Aliyu Babba, had left the city a few days before the British attack, taking with him about 300 horsemen, and made for Sokoto.\" This rings. But let's not rush.\n\nQuestion wording: \"Where was the Emir of Kano when the British stormed Kano in February 1903, and roughly how many horsemen had he taken with him?\" Likely expects \"He was on his way to Sokoto (or at Sokoto) with about 300 horsemen.\" Need answer concise.\n\nLet's ensure date: British stormed Kano on 3 February 1903. Emir Aliyu had left Kano before attack, heading to Sokoto to seek assistance from the Sultan, with about 300 cavalry. Yes.\n\nFinal answer: He had fled toward Sokoto; roughly 300 horsemen."
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 3447526952,
+    "prompt_eval_count": 65,
+    "eval_count": 627
+  }
+}

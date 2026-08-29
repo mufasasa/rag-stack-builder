@@ -1,0 +1,27 @@
+{
+  "id": "N5",
+  "field": "nigeria",
+  "model": "deepseek-v4-pro:0813",
+  "system_prompt": "You are a knowledgeable assistant. Answer the question directly and concisely, stating specific facts (dates, names, numbers) where relevant.",
+  "question": "Where and when did the ex-Sultan of Sokoto die after fleeing during the 1903 British campaign in Northern Nigeria?",
+  "ground_truth": "At Burmi, in July 1903.",
+  "evidence": {
+    "file": "corpus/files/nigeria/orr_making_of_northern_nigeria_1911.txt",
+    "lines": "6987-6989",
+    "quote": "\"the death of the ex-Sultan of Sokoto at Burmi in July 1903\""
+  },
+  "response": {
+    "model": "deepseek-v4-pro:0813",
+    "created_at": "2026-08-29T22:27:04.618736852Z",
+    "message": {
+      "role": "assistant",
+      "content": "The ex-Sultan of Sokoto, Sultan Muhammadu Attahiru I, was killed at **Burmi** (in present-day Gombe State, Nigeria) on **27 July 1903**, during the British assault on the town after he had fled Sokoto.",
+      "thinking": "We need answer question. Need be careful. The ex-Sultan of Sokoto after fleeing during 1903 British campaign in Northern Nigeria. This refers Sultan Muhammadu Attahiru I? He fled Sokoto after British captured in March 1903, went to Burmi, killed in battle July 1903? Need where and when died. The ex-Sultan of Sokoto, Attahiru I, fled after fall of Sokoto in March 1903, sought refuge at Burmi, where he was killed in July 1903 during British assault. Specifically Battle of Burmi, 27 July 1903? Let's verify. Sultan Muhammadu Attahiru I died at Burmi on 27 July 1903. Burmi in present-day Gombe State, Nigeria? Yes near Bajoga? Burmi was a town in Gombe emirate area. Answer: Burmi, Northern Nigeria, on 27 July 1903. Need concise."
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 1705957908,
+    "prompt_eval_count": 57,
+    "eval_count": 255
+  }
+}

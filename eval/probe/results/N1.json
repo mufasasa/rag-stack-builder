@@ -1,0 +1,27 @@
+{
+  "id": "N1",
+  "field": "nigeria",
+  "model": "deepseek-v4-pro:0813",
+  "system_prompt": "You are a knowledgeable assistant. Answer the question directly and concisely, stating specific facts (dates, names, numbers) where relevant.",
+  "question": "When and where was the Union Flag first hoisted to mark the establishment of the Protectorate of Northern Nigeria, and whose flag did it replace?",
+  "ground_truth": "1 January 1900, at Lokoja, replacing the Royal Niger Company's flag.",
+  "evidence": {
+    "file": "corpus/files/nigeria/orr_making_of_northern_nigeria_1911.txt",
+    "lines": "3655-3662",
+    "quote": "\"the Protectorate come into being on the 1st of January 1900. ... On the 1st of January 1900 the Union Flag was hoisted at Lokoja in place of the Company's, in the presence of a parade of all arms\""
+  },
+  "response": {
+    "model": "deepseek-v4-pro:0813",
+    "created_at": "2026-08-29T22:26:44.49867682Z",
+    "message": {
+      "role": "assistant",
+      "content": "The Union Flag was first hoisted on **1 January 1900 at Lokoja**, marking the establishment of the **Protectorate of Northern Nigeria**. It replaced the flag of the **Royal Niger Company**.",
+      "thinking": "We need answer question. Need be careful. \"When and where was the Union Flag first hoisted to mark the establishment of the Protectorate of Northern Nigeria, and whose flag did it replace?\" This is historical. Protectorate of Northern Nigeria established 1 January 1900? Union Flag hoisted at Lokoja? It replaced flag of Royal Niger Company? Let's verify. The Protectorate of Northern Nigeria was proclaimed on 1 January 1900, with Frederick Lugard as High Commissioner. The Union Flag was hoisted at Lokoja, headquarters? It replaced the flag of the Royal Niger Company, whose charter was revoked; company territories transferred to British Crown. I think first hoisted at Lokoja on 1 January 1900, replacing Royal Niger Company flag.Need answer concise."
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 1337160670,
+    "prompt_eval_count": 62,
+    "eval_count": 211
+  }
+}
