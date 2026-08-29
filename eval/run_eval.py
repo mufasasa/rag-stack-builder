@@ -46,13 +46,54 @@ def chat(messages: list) -> dict:
         return json.loads(resp.read())
 
 
+DOMAIN = "nigeria"
+K = 8
+SOLUTION_SYSTEM_PROMPT = (
+    "You are a knowledgeable assistant answering from a curated document "
+    "library. Retrieved passages from the library are provided with citations. "
+    "Base your answer ONLY on the passages: cite source + location (chapter, "
+    "pages) for every claim you draw from them. If the passages do not contain "
+    "the answer, say plainly that the library does not answer this — do not "
+    "answer from memory as if grounded."
+)
+
+
+def _search(query: str) -> list:
+    import sys as _sys
+    _sys.path.insert(0, str(HERE.parent / "mcp_server"))
+    import server as libserver  # same retrieval code the MCP hosts use
+    return libserver.search_corpus(query, DOMAIN, K)
+
+
+def _solution_user_message(q: dict) -> tuple:
+    hits = _search(q["question"])
+    passages = "\n\n".join(
+        f"[{i+1}] {h['citation']['breadcrumb']}"
+        + (f" (pages {h['citation']['page_start']}–{h['citation']['page_end']})"
+           if h['citation']['page_start'] else "")
+        + f" (score {h['score']})\n{h['text']}"
+        for i, h in enumerate(hits)
+    )
+    msg = (
+        f"Question: {q['question']}\n\n"
+        f"Retrieved passages from the library:\n\n{passages}"
+    )
+    return msg, hits
+
+
 def run_case(q: dict, condition: str) -> dict:
-    if condition != "baseline":
-        raise NotImplementedError("solution condition arrives in Phase 3")
-    messages = [
-        {"role": "system", "content": SYSTEM_PROMPT},
-        {"role": "user", "content": q["question"]},
-    ]
+    retrieval_log = None
+    if condition == "baseline":
+        messages = [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": q["question"]},
+        ]
+    else:
+        user_msg, retrieval_log = _solution_user_message(q)
+        messages = [
+            {"role": "system", "content": SOLUTION_SYSTEM_PROMPT},
+            {"role": "user", "content": user_msg},
+        ]
     t0 = time.time()
     first = chat(messages)
     record = {
@@ -60,9 +101,10 @@ def run_case(q: dict, condition: str) -> dict:
         "kind": q["kind"],
         "condition": condition,
         "model": MODEL,
-        "system_prompt": SYSTEM_PROMPT,
+        "system_prompt": messages[0]["content"],
         "question": q["question"],
         "ground_truth": q["ground_truth"],
+        "retrieval": retrieval_log,
         "first_response": first,
     }
     if q["kind"] == "lookup":
