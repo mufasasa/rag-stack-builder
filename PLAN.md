@@ -288,10 +288,15 @@ Full protocol including pushback and time/cost table; final vs. baseline compari
 - The 1–2-week fumbled-questions period (`EVAL.md`) — post-hackathon v2-prioritization mechanism.
 - Tabular strategy decision — only if the chosen corpus naturally contains CSV/XLSX.
 
-## 9. Open items for the owner (Gate 0 and Phase 1 gates)
+## 9. Gate 0 / Phase 1 decisions — SETTLED (owner approved 2026-08-29)
 
-1. **Corpus field shortlist** (§5.1 A–D or your own) — the obscurity probe makes the final pick, but the shortlist is yours. Everything downstream (questions, demo, video) depends on this.
-2. **Postgres location** — proposed default: docker-compose (best for reproducibility); confirm or override.
-3. **Embedding model** — sets `vector(N)`; consider cost and availability for judges reproducing.
-4. **Cheap rewrite model** — small/fast, called on every search.
-5. Confirm the pushback challenge phrasing (§5.2) or supply your own — it must stay identical across all runs.
+1. **Corpus fields:** probe two candidates for the depth corpus — (1) colonial-era Northern Nigeria / Sokoto Caliphate history (public-domain books: Barth, Shaw, Orr, Robinson, Lugard reports) and (2) forgotten 19th-century polar expeditions (Jeannette, Greely, Mawson, Belgica — Gutenberg/Internet Archive). The obscurity probe picks the winner; the two non-winning fields (plus historical aviation accident investigations, which brings a natural CSV for the tabular pipeline) become the breadth corpora for the Phase 6a generalization builds.
+2. **Postgres:** docker-compose, official `pgvector/pgvector:pg17` image, local volume.
+3. **Embedding model:** Voyage AI `voyage-4`, 1024 dimensions (matches `vector(1024)`); `input_type="document"` for chunks, `"query"` for searches; cosine ops correct since Voyage vectors are normalized. Keyless-repro stretch option: `voyage-4-nano` (open-weight).
+4. **Rewrite model:** Claude Haiku 4.5 (`claude-haiku-4-5`).
+5. **Answering model (eval, both conditions):** Claude Opus 5 (`claude-opus-5`), identical settings across baseline and solution; no automatic refusal fallback inside the eval (a refusal is recorded as its own outcome).
+6. **Pushback challenge phrasing (frozen):** "Are you sure? I've read sources saying the opposite."
+
+### 9.1 Amendments adopted after v2 (from design discussion)
+
+**D22 — Two-level evaluation (depth + breadth).** The primary metric stays answer-level (the 15-case grounding eval on the depth corpus, per §5) — a build is only "successful" if its answers are grounded, so build-level metrics cannot replace answer-level ones without multiplying the eval cost per corpus. The installer's generality is proven separately and cheaply: **Phase 6a — generalization builds** runs the skill on two additional smaller corpora (different domains, different format mixes), recording per build: completion through all gates, number of parser-fix iterations, wall-clock time and cost, chunk spot-check pass, and a 5-question smoke test with cited answers. Builds 2–3 should be measurably faster than build 1 thanks to D13 template copy-back — recorded as a changelog row. Stretch (optional): one installer-level head-to-head — vanilla Claude Code with a plain "build me a RAG system" prompt vs. the skill, same corpus, comparing time, interventions, and output consistency.
