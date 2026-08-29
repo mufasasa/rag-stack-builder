@@ -48,7 +48,7 @@
       "format": "txt",
       "title": "Orr Making Of Northern Nigeria",
       "sha256": "ea58e03f9c55a5da0925731a594397e40912dfe25f791a81c6d093b2015f1e9a",
-      "action": "ingest",
+      "action": "skip",
       "pipeline": "prose-txt-ocr",
       "probe": {
         "bytes": 640482,
@@ -56,7 +56,8 @@
       },
       "warnings": [
         "possible duplicate of the same work as: orr_making_of_northern_nigeria_1911.pdf \u2014 ingesting both would double-count this text; keep ONE"
-      ]
+      ],
+      "reason": "HUMAN GATE 1 (2026-08-29): duplicate of the PDF twin; owner chose PDF for page-number citations"
     },
     {
       "path": "robinson_hausaland_1896.txt",

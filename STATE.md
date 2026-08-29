@@ -13,7 +13,8 @@
 - [x] 0.5 Baseline run + scored — DONE 2026-08-29: grounded accuracy 11/26 (42%), 1/9 lookups fully correct, 1/2 traps honest, 2/3 correct answers flipped under pushback, fabricated attributions in 7/15 cases. `eval/runs/baseline/baseline-2026-08-29/` (SCORES.md + transcripts). CHANGELOG.md updated.
 
 **PHASE 0 COMPLETE.**
-**PHASE 1 COMPLETE (2026-08-29):** schema applied, fake-chunk round trip verified by similarity and keyword. Next: Phase 2 — ingestion scripts (write, test, HUMAN GATES, freeze).
+**PHASE 1 COMPLETE (2026-08-29):** schema applied, fake-chunk round trip verified by similarity and keyword.
+**PHASE 2 in progress:** scripts written and dry-tested (parser fix recorded: PDF header-dropper ate CHAPTER lines). HUMAN GATE 1 answered 2026-08-29: plan approved, Orr ingested as PDF (page citations), txt twin skipped as duplicate. Ingestion running (free-tier Voyage rate limits → small batches, patient 429 retry). Next: HUMAN GATE 2 (owner inspects ~20 random chunks), then freeze scripts.
 
 ## Settled decisions (do not re-litigate; reasoning in PLAN.md §3, §9)
 
