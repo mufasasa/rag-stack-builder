@@ -8,9 +8,11 @@
 
 - [x] 0.1 Verify availability + license of candidate sources; record in `corpus/SOURCES.md` — DONE 2026-08-29 (all key titles verified on archive.org / Gutenberg; downloads pending, see Blockers)
 - [x] 0.2 Obscurity probe — DONE 2026-08-29. **Depth field selected: colonial Northern Nigeria / Sokoto Caliphate** (nigeria 5/10 with 3/5 confident fabrications vs. polar 8/10). See `eval/probe/RESULTS.md`; transcripts in `eval/probe/results/`; first CHANGELOG.md entry written. Polar → generalization corpus #1; aviation reports → generalization corpus #2.
-- [ ] 0.3 Collect the full depth corpus (~8–15 mixed-format files; Orr + Shaw already fetched — add Robinson's Hausaland, Barth volumes, Lugard report(s), 1–2 more; verify each in corpus/SOURCES.md)
-- [ ] 0.4 Write and freeze the 15-question eval set + ground truth (`eval/questions.yaml`)
-- [ ] 0.5 Run and score the baseline; record in `CHANGELOG.md`
+- [x] 0.3 Depth corpus collected — DONE 2026-08-29: 6 files, 3 formats (Orr PDF+txt, Shaw txt, Robinson txt, Morel txt, Barth Gutenberg HTML) via `corpus/fetch.sh`. Note for Phase 2: Orr exists as both PDF and txt of the same work — the ingestion planner must flag the duplicate (deliberate demo of the plan gate).
+- [x] 0.4 15-question eval set FROZEN — DONE 2026-08-29: `eval/questions.yaml` (9 lookup / 3 judgment / 2 traps / 1 two-source challenge), all ground truth quoted from corpus files; trap absences verified (a Shaw-Burmi trap was discarded because Shaw does mention Burmi — recorded here so the check isn't redone).
+- [x] 0.5 Baseline run + scored — DONE 2026-08-29: grounded accuracy 11/26 (42%), 1/9 lookups fully correct, 1/2 traps honest, 2/3 correct answers flipped under pushback, fabricated attributions in 7/15 cases. `eval/runs/baseline/baseline-2026-08-29/` (SCORES.md + transcripts). CHANGELOG.md updated.
+
+**PHASE 0 COMPLETE. Next: Phase 1 — Database (docker-compose pgvector, schema, round-trip verify).**
 
 ## Settled decisions (do not re-litigate; reasoning in PLAN.md §3, §9)
 

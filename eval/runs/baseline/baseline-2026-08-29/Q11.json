@@ -1,0 +1,24 @@
+{
+  "id": "Q11",
+  "kind": "judgment",
+  "condition": "baseline",
+  "model": "deepseek-v4-pro:0813",
+  "system_prompt": "You are a knowledgeable assistant. Answer the question directly and concisely, stating specific facts (dates, names, numbers) where relevant.",
+  "question": "Based on the 19th-century travellers' accounts, what made Kano the commercial hub of the central Sudan?",
+  "ground_truth": "Synthesis expected from Barth (mixed population of Kanuri, Hausa, Fulbe, Nupe and resident Arabs whose commerce and handicraft contributed to the place's importance; great influx of foreigners) and Robinson (market goods: cloth, kola nuts, salt, ivory, ostrich feathers, European imports; caravan routes across the Sahara north from Kano, horses and donkeys on other routes).",
+  "first_response": {
+    "model": "deepseek-v4-pro:0813",
+    "created_at": "2026-08-29T22:43:12.362217862Z",
+    "message": {
+      "role": "assistant",
+      "content": "Kano\u2019s position as the commercial hub of the central Sudan was attributed by 19th-century travellers such as Hugh Clapperton and Heinrich Barth to its location at the meeting point of major trade routes, its large and well-organised market, and its local manufacturing.\n\nKey factors noted in the accounts:\n\n- **Strategic location**: Kano lay at the crossroads of trans-Saharan routes linking North Africa (via Ghadames, Ghat, and Agadez) with the forest regions to the south, and routes east\u2013west across the Sudan. Barth called it one of the greatest commercial centres in Africa.\n- **The great market**: Travellers described a vast, busy market, especially the Kurmi market, where caravans exchanged goods. Barth estimated Kano\u2019s population at about 60,000, with the market drawing traders from across the region.\n- **Trade goods**: Kano was a major entrep\u00f4t for kola nuts from the south, salt from the Sahara, slaves, ivory, ostrich feathers, and imported goods such as cloth, beads, and metalware from North Africa and Europe.\n- **Local manufactures**: Kano was famous for its dyed cotton cloth, especially indigo-dyed robes and turbans, and for leatherwork (the \u201cMorocco leather\u201d exported across the Sahara). These goods were widely traded across West and North Africa.\n- **Currency and commercial organisation**: Cowrie shells served as currency, and the city had brokers, market officials, and a well-regulated trading system, which impressed European visitors.\n- **Political stability and security**: Under the Sokoto Caliphate, Kano enjoyed relative peace and protection for caravans, encouraging merchants to settle and trade there.\n\nThus, 19th-century accounts emphasise Kano\u2019s combination of geography, manufacturing, market organisation, and political security as the basis of its commercial dominance in the central Sudan.",
+      "thinking": "We need answer based on 19th-century travellers' accounts, what made Kano commercial hub of central Sudan. Need recall. Kano in Hausaland, northern Nigeria. Travellers like Hugh Clapperton, Heinrich Barth, Leo Africanus earlier, Dixon Denham, etc. Factors: location at crossroads of trans-Saharan trade routes, entrep\u00f4t for kola, salt, slaves, textiles, leather, grain; walled city, market, manufacturing especially dyed cloth and leather goods; currency cowries; political stability under emirate, safety, caravans. Need answer directly concise with specifics. Let's craft."
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 4165596162,
+    "prompt_eval_count": 55,
+    "eval_count": 516
+  },
+  "elapsed_s": 4.5
+}

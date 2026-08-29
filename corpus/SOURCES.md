@@ -13,8 +13,14 @@ this session's network egress policy currently blocks archive.org and gutenberg.
 | A Tropical Dependency | Flora L. Shaw (Lady Lugard), 1905 | https://archive.org/details/tropicaldependen00luga (also .../tropicaldependen00shaw) | PDF, OCR txt (djvu.txt confirmed) |
 | Travels and Discoveries in North and Central Africa | Heinrich Barth, 1857–59 (1890 ed. also available) | https://archive.org/details/travelsdiscoveri00bartuoft (multi-volume scans; also Gutenberg #73138) | PDF, OCR txt, Gutenberg HTML/txt |
 
-Still to verify when collecting: Robinson's *Hausaland* (1896), Lugard's published annual
-reports (Colonial Office, pre-1920), and 1–2 further titles to reach the 8–15 file target.
+| Hausaland, or Fifteen Hundred Miles through the Central Soudan | C. H. Robinson, 1896 | https://archive.org/details/hausaland00robi | OCR txt (fetched) |
+| Nigeria: Its Peoples and Its Problems | E. D. Morel, 1911 | https://archive.org/details/nigeriaitspeople00more | OCR txt (fetched) |
+| Travels and Discoveries (Gutenberg HTML edition) | Heinrich Barth | https://www.gutenberg.org/ebooks/73138 | HTML (fetched) |
+
+Lugard's Colonial Office annual reports were searched for on archive.org but no
+standalone digitized volume surfaced under his name; the corpus (6 files, 3 formats)
+is sufficient without them. The depth corpus is FROZEN as of 2026-08-29 — the eval
+set (eval/questions.yaml) is written against exactly these files.
 
 ## Candidate field 2 — Forgotten 19th-century polar expeditions
 

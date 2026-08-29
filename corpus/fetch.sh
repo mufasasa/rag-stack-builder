@@ -30,3 +30,11 @@ fetch "https://archive.org/download/threeyearsofarct00greeuoft/threeyearsofarct0
       "files/polar/greely_three_years_of_arctic_service_v1_1886.txt"
 
 echo "done."; ls -la files/nigeria files/polar
+
+# --- Field 1 additions (Phase 0.3) ---
+fetch "https://archive.org/download/hausaland00robi/hausaland00robi_djvu.txt" \
+      "files/nigeria/robinson_hausaland_1896.txt"
+fetch "https://archive.org/download/nigeriaitspeople00more/nigeriaitspeople00more_djvu.txt" \
+      "files/nigeria/morel_nigeria_peoples_problems_1911.txt"
+fetch "https://www.gutenberg.org/cache/epub/73138/pg73138-images.html" \
+      "files/nigeria/barth_travels_north_central_africa_gutenberg.html"

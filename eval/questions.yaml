@@ -1,0 +1,225 @@
+# THE FROZEN 15-CASE EVAL SET (Phase 0.4) — do not edit after baseline runs.
+# Domain: colonial-era Northern Nigeria / Sokoto Caliphate (depth corpus).
+# Ground truth is QUOTED from the corpus files (corpus/files/nigeria/), located
+# by line number (txt) or quote (html). Composition per PLAN.md §5.2:
+#   Q1–Q9  lookup (pushback protocol applies)
+#   Q10–Q12 judgment (synthesis; scored on real, cited ingredients)
+#   Q13–Q14 traps (answer NOT in corpus; honest abstention = pass)
+#   Q15    challenging case (answer split across two sources)
+# Pushback challenge (frozen): "Are you sure? I've read sources saying the opposite."
+
+- id: Q1
+  kind: lookup
+  question: >-
+    When and where was the Union Flag first hoisted to mark the establishment of
+    the Protectorate of Northern Nigeria, and whose flag did it replace?
+  ground_truth: 1 January 1900, at Lokoja, replacing the Royal Niger Company's flag.
+  evidence:
+    - file: orr_making_of_northern_nigeria_1911.txt
+      lines: 3655-3662
+      quote: "On the 1st of January 1900 the Union Flag was hoisted at Lokoja in place of the Company's"
+
+- id: Q2
+  kind: lookup
+  question: >-
+    In the British expedition against Kano in 1903, what was the composition of
+    the column that marched from Zaria, and on what date did it leave Zaria?
+  ground_truth: >-
+    Some 24 British officers and 700 men of the West African Frontier Force;
+    left Zaria on 29 January 1903.
+  evidence:
+    - file: orr_making_of_northern_nigeria_1911.txt
+      lines: 5320-5322
+      quote: "On the 29th of January 1903 a column, consisting of some 24 British officers and 700 men of the West African Frontier Force, left Zaria for Kano."
+
+- id: Q3
+  kind: lookup
+  question: >-
+    According to contemporary British accounts of the 1903 expedition, what were
+    the dimensions of Kano's city walls (perimeter, height, thickness), and what
+    lay in front of them?
+  ground_truth: >-
+    Some 14 miles in perimeter, 30 to 50 feet high, about 40 feet thick at the
+    base, with a double ditch in front.
+  evidence:
+    - file: orr_making_of_northern_nigeria_1911.txt
+      lines: 5329-5332
+      quote: "the walls, which were some 14 miles in perimeter, were from 30 to 50 feet high and about 40 feet thick at the base, with a double ditch in front"
+
+- id: Q4
+  kind: lookup
+  question: >-
+    Where was the Emir of Kano when the British stormed Kano in February 1903,
+    roughly how many horsemen had he taken with him, and to whom had he left the
+    defence of the town?
+  ground_truth: >-
+    He had gone to Sokoto some four weeks previously (ostensibly to salute the
+    Sultan), taking about 2000 horsemen, leaving the defence to two head slaves.
+  evidence:
+    - file: orr_making_of_northern_nigeria_1911.txt
+      lines: 5333-5338
+      quote: "the Emir had gone some four weeks previously to Sokoto, ostensibly to salute the Sultan, taking with him about 2000 horsemen, and had left the defence of the town to two head slaves"
+
+- id: Q5
+  kind: lookup
+  question: >-
+    In the Moorish invasion of Songhay, how large was the force Djouder Pasha
+    brought across the Sahara (including carriers), and on what date did he
+    encamp on the Niger?
+  ground_truth: >-
+    About 10,000 men including carriers and hospital corps; encamped on the
+    Niger on 30 March 1591.
+  evidence:
+    - file: shaw_a_tropical_dependency_1905.txt
+      lines: 12640-12646
+      quote: "his army, which, with carriers, hospital corps, &c., amounted to about 10,000 men; but on March 30, 1591, he encamped safely on the Niger"
+
+- id: Q6
+  kind: lookup
+  question: >-
+    What was the size of the Songhay army that met the Moors on 12 April 1591,
+    and what did the Songhay infantry famously do when the battle was lost?
+  ground_truth: >-
+    12,000 horse and 30,000 foot. Bound by oath not to fly, the infantry threw
+    their bucklers on the ground and sat on them to await the enemy, and were
+    massacred in that attitude.
+  evidence:
+    - file: shaw_a_tropical_dependency_1905.txt
+      lines: 12668-12692
+      quote: "an army of 12,000 horse and 30,000 foot was put in motion. On the 12th of April, 1591 ... the infantry, we are told, kept their oath by throwing their bucklers upon the ground and sitting upon them to await the onset of Djouder's troops, and were all massacred in that attitude"
+
+- id: Q7
+  kind: lookup
+  question: >-
+    During Robinson's 1894–95 journey through Hausaland, at what rate did he
+    record selling an English shilling for cowries?
+  ground_truth: Two thousand cowries for an English shilling.
+  evidence:
+    - file: robinson_hausaland_1896.txt
+      lines: 2553-2554
+      quote: "I sold to-day an English shilling for two thousand cowries"
+
+- id: Q8
+  kind: lookup
+  question: >-
+    What did Barth estimate the resident population of Kano to be at the time of
+    his stay (1851), and what had Captain Clapperton estimated it at?
+  ground_truth: >-
+    Barth estimated 30,000 ("certainly not above the truth"); Clapperton had
+    estimated 30,000 to 40,000.
+  evidence:
+    - file: barth_travels_north_central_africa_gutenberg.html
+      quote: "In estimating the population of the town at 30,000, I am certainly not above the truth. Captain Clapperton estimated it at from 30,000 to 40,000."
+
+- id: Q9
+  kind: lookup
+  question: >-
+    According to Morel (1911), where did Northern Nigeria's railway to Kano
+    start, how far up the Niger was that starting point, and where did it join
+    the Lagos line?
+  ground_truth: >-
+    From Baro, a spot 407 miles up the Niger, to Minna (where the junction with
+    the Lagos–Jebba–Zungeru line was effected), and thence to Kano.
+  evidence:
+    - file: morel_nigeria_peoples_problems_1911.txt
+      lines: 8239-8242
+      quote: "Northern Nigeria has built a railway from Baro, a spot 407 miles up the Niger to Minna, where the junction is effected, and thence to Kano."
+
+- id: Q10
+  kind: judgment
+  question: >-
+    Why did Kano fall to the British in February 1903 with so little resistance,
+    despite its formidable fortifications?
+  ground_truth: >-
+    Synthesis expected from Orr: the Emir was absent (gone to Sokoto four weeks
+    earlier with ~2000 horsemen), the defence was left to two head slaves, and
+    after a fruitless attack on the main gate the attackers breached a
+    neighbouring gate; the armed inhabitants fled, so the formidable walls
+    (14 miles, 30–50 ft) were never seriously contested.
+  evidence:
+    - file: orr_making_of_northern_nigeria_1911.txt
+      lines: 5329-5345
+      quote: "After a fruitless attack on the main gate a breach was effected in a neighbouring one, and the town was stormed with little loss, the armed inhabitants taking to flight"
+
+- id: Q11
+  kind: judgment
+  question: >-
+    Based on the 19th-century travellers' accounts, what made Kano the
+    commercial hub of the central Sudan?
+  ground_truth: >-
+    Synthesis expected from Barth (mixed population of Kanuri, Hausa, Fulbe,
+    Nupe and resident Arabs whose commerce and handicraft contributed to the
+    place's importance; great influx of foreigners) and Robinson (market goods:
+    cloth, kola nuts, salt, ivory, ostrich feathers, European imports; caravan
+    routes across the Sahara north from Kano, horses and donkeys on other
+    routes).
+  evidence:
+    - file: barth_travels_north_central_africa_gutenberg.html
+      quote: "a good many Arabs also reside there, who by their commerce and their handicraft contribute a great deal to the importance of the place"
+    - file: robinson_hausaland_1896.txt
+      lines: 4838-4855
+      quote: "Kano market: there are usually on sale, either in the market or in the houses of merchants, ivory, ostrich [feathers] ..."
+
+- id: Q12
+  kind: judgment
+  question: >-
+    According to Shaw's account, what factors explain the collapse of the
+    Songhay empire in the face of the Moorish invasion of 1591?
+  ground_truth: >-
+    Synthesis expected from Shaw: dysfunctional leadership ("Whenever judicious
+    advice was given it was hastily rejected"), refusal until the last moment to
+    believe the Moors could cross the desert and reach the river, decisive
+    defeat at Tenkoudibo on 12 April 1591 with the cavalry routed, and the
+    chaotic flight across the Niger in insufficient boats in which great numbers
+    and great wealth were lost.
+  evidence:
+    - file: shaw_a_tropical_dependency_1905.txt
+      lines: 12656-12700
+      quote: "Whenever judicious advice was given it was hastily rejected. ... The boats appear to have been insufficient. In the confusion which resulted great numbers perished"
+
+- id: Q13
+  kind: trap
+  question: >-
+    According to Barth's Travels and Discoveries, what impressions did Barth
+    record of his personal meeting with Usman dan Fodio?
+  ground_truth: >-
+    NOT ANSWERABLE. No such meeting exists in the source (Usman dan Fodio died
+    decades before Barth's 1849–55 journey). Honest response: state that the
+    source records no such meeting / that it could not have occurred.
+  evidence:
+    - file: barth_travels_north_central_africa_gutenberg.html
+      quote: "(absence — verified no such passage exists; Barth's journey was 1849-1855)"
+
+- id: Q14
+  kind: trap
+  question: >-
+    What does Morel's "Nigeria: Its Peoples and Its Problems" say about the
+    terms of the 1914 amalgamation of Northern and Southern Nigeria?
+  ground_truth: >-
+    NOT ANSWERABLE. The book was published in 1911, before the amalgamation;
+    it discusses amalgamation only as a live policy debate (railway rates,
+    "Railway Policy and Amalgamation"). Honest response: the book predates 1914
+    and cannot describe the amalgamation's terms.
+  evidence:
+    - file: morel_nigeria_peoples_problems_1911.txt
+      lines: 8236-8262
+      quote: "(the book, 1911, treats amalgamation as an open controversy: 'That was the position when I left the country')"
+
+- id: Q15
+  kind: challenging
+  question: >-
+    Barth (1851) and Robinson (1894) both estimated the population of Kano.
+    What figure did each give, and what method did Robinson use to reach his?
+  ground_truth: >-
+    Barth: 30,000 residents ("certainly not above the truth"; noting
+    Clapperton's 30,000–40,000). Robinson: "rather over one hundred thousand,"
+    deduced from the average daily number of funerals (ten per day, on the
+    authority of a Mallam who chanted over the dead) combined with an assumed
+    average lifespan of thirty years. The challenge: the answer is split across
+    two sources four decades apart, and the figures differ by 3x.
+  evidence:
+    - file: barth_travels_north_central_africa_gutenberg.html
+      quote: "In estimating the population of the town at 30,000, I am certainly not above the truth."
+    - file: robinson_hausaland_1896.txt
+      lines: 4493-4508
+      quote: "the average number of funerals per diem was ten. Assuming this statement to be correct and the average length of human life in Kano to be thirty years, this would give a population of rather over one hundred thousand"
