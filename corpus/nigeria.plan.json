@@ -1,0 +1,86 @@
+{
+  "domain": "nigeria",
+  "folder": "../corpus/files/nigeria",
+  "files": [
+    {
+      "path": "barth_travels_north_central_africa_gutenberg.html",
+      "format": "html",
+      "title": "Barth Travels North Central Africa",
+      "sha256": "4ac435fb6621aca68c198288927bbcc33cd421f20547d9bdbb6bdcb5f975842a",
+      "action": "ingest",
+      "pipeline": "prose-html",
+      "probe": {
+        "bytes": 2091056,
+        "headings": 55,
+        "paragraph_tags": 2018
+      }
+    },
+    {
+      "path": "morel_nigeria_peoples_problems_1911.txt",
+      "format": "txt",
+      "title": "Morel Nigeria Peoples Problems",
+      "sha256": "35ac7aeeaaa1ae8dd510521874cc7b757989fa668bdd6c96d48e92d98b2b8623",
+      "action": "ingest",
+      "pipeline": "prose-txt-ocr",
+      "probe": {
+        "bytes": 586279,
+        "chapter_headings": 37
+      }
+    },
+    {
+      "path": "orr_making_of_northern_nigeria_1911.pdf",
+      "format": "pdf",
+      "title": "Orr Making Of Northern Nigeria",
+      "sha256": "94e4c224535124fb31c232649567f12c8e3dcb1754136e0eacc2217364c8fee3",
+      "action": "ingest",
+      "pipeline": "prose-pdf",
+      "probe": {
+        "pages": 342,
+        "text_layer": true,
+        "note": "OCR text layer present"
+      },
+      "warnings": [
+        "possible duplicate of the same work as: orr_making_of_northern_nigeria_1911.txt \u2014 ingesting both would double-count this text; keep ONE"
+      ]
+    },
+    {
+      "path": "orr_making_of_northern_nigeria_1911.txt",
+      "format": "txt",
+      "title": "Orr Making Of Northern Nigeria",
+      "sha256": "ea58e03f9c55a5da0925731a594397e40912dfe25f791a81c6d093b2015f1e9a",
+      "action": "ingest",
+      "pipeline": "prose-txt-ocr",
+      "probe": {
+        "bytes": 640482,
+        "chapter_headings": 34
+      },
+      "warnings": [
+        "possible duplicate of the same work as: orr_making_of_northern_nigeria_1911.pdf \u2014 ingesting both would double-count this text; keep ONE"
+      ]
+    },
+    {
+      "path": "robinson_hausaland_1896.txt",
+      "format": "txt",
+      "title": "Robinson Hausaland",
+      "sha256": "d244b6f448ff2868c55e68acc350bedd28b6bfd5b384489ec9022419cb091906",
+      "action": "ingest",
+      "pipeline": "prose-txt-ocr",
+      "probe": {
+        "bytes": 488952,
+        "chapter_headings": 39
+      }
+    },
+    {
+      "path": "shaw_a_tropical_dependency_1905.txt",
+      "format": "txt",
+      "title": "Shaw A Tropical Dependency",
+      "sha256": "3cb62e1edc4929645a5a129d4fa4c17165a0a429bffac34eb5202db2673d9ae9",
+      "action": "ingest",
+      "pipeline": "prose-txt-ocr",
+      "probe": {
+        "bytes": 1162452,
+        "chapter_headings": 53
+      }
+    }
+  ]
+}
