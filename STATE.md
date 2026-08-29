@@ -12,7 +12,8 @@
 - [x] 0.4 15-question eval set FROZEN — DONE 2026-08-29: `eval/questions.yaml` (9 lookup / 3 judgment / 2 traps / 1 two-source challenge), all ground truth quoted from corpus files; trap absences verified (a Shaw-Burmi trap was discarded because Shaw does mention Burmi — recorded here so the check isn't redone).
 - [x] 0.5 Baseline run + scored — DONE 2026-08-29: grounded accuracy 11/26 (42%), 1/9 lookups fully correct, 1/2 traps honest, 2/3 correct answers flipped under pushback, fabricated attributions in 7/15 cases. `eval/runs/baseline/baseline-2026-08-29/` (SCORES.md + transcripts). CHANGELOG.md updated.
 
-**PHASE 0 COMPLETE. Next: Phase 1 — Database (docker-compose pgvector, schema, round-trip verify).**
+**PHASE 0 COMPLETE.**
+**PHASE 1 COMPLETE (2026-08-29):** schema applied, fake-chunk round trip verified by similarity and keyword. Next: Phase 2 — ingestion scripts (write, test, HUMAN GATES, freeze).
 
 ## Settled decisions (do not re-litigate; reasoning in PLAN.md §3, §9)
 
@@ -31,7 +32,7 @@
 
 ## Environment / connections
 
-- Postgres: not yet provisioned (Phase 1)
+- Postgres: LOCAL Postgres 16.13 + postgresql-16-pgvector (sandbox has no Docker daemon; db/docker-compose.yml with pgvector/pg17 is the judges' path — same schema). DB raglib, user rag, localhost:5432. Schema applied from db/schema.sql; round-trip verified 2026-08-29 (cosine 0.994 + tsv rank both returned the fake chunk).
 - Embedding dimension: 1024 (voyage-4)
 - Required env vars (never committed): `ANTHROPIC_API_KEY`, `VOYAGE_API_KEY`, `DATABASE_URL`
 

@@ -1,0 +1,18 @@
+# Judges' reproduction path: `docker compose up -d` then apply schema.sql:
+#   docker compose exec -T db psql -U rag -d raglib < schema.sql
+# (Development in the original build session used a local Postgres 16 +
+#  postgresql-16-pgvector because the sandbox had no Docker daemon — same
+#  schema, same verification. Recorded in STATE.md.)
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_USER: rag
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ragdev}
+      POSTGRES_DB: raglib
+    ports:
+      - "5432:5432"
+    volumes:
+      - raglib_data:/var/lib/postgresql/data
+volumes:
+  raglib_data:
