@@ -64,7 +64,10 @@ def _q(sql: str, params: tuple) -> list:
 # --- Phase 4 layers (each proven by the eval before becoming the default) ---
 REWRITE_MODEL = "gpt-oss:20b"
 OLLAMA_ENDPOINT = "https://ollama.com/api/chat"
-DEFAULT_MODE = os.environ.get("RAG_MODE", "vector")          # vector | hybrid
+# hybrid became the default after the Iteration 2 rank probe (MRR 0.900 vs
+# 0.733 vector-only); rewriting was REMOVED after the same probe showed it
+# degrades ranks (0.783) — see CHANGELOG.md Iterations 2-3.
+DEFAULT_MODE = os.environ.get("RAG_MODE", "hybrid")          # vector | hybrid
 DEFAULT_REWRITE = os.environ.get("RAG_REWRITE", "off") == "on"
 
 _SELECT = """SELECT c.id, s.title, c.chapter, c.page_start, c.page_end,
