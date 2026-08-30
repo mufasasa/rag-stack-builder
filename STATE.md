@@ -14,7 +14,9 @@
 
 **PHASE 0 COMPLETE.**
 **PHASE 1 COMPLETE (2026-08-29):** schema applied, fake-chunk round trip verified by similarity and keyword.
-**PHASE 2 in progress:** scripts written and dry-tested (parser fix recorded: PDF header-dropper ate CHAPTER lines). HUMAN GATE 1 answered 2026-08-29: plan approved, Orr ingested as PDF (page citations), txt twin skipped as duplicate. Ingestion running (free-tier Voyage rate limits → small batches, patient 429 retry). Next: HUMAN GATE 2 (owner inspects ~20 random chunks), then freeze scripts.
+**PHASE 2 COMPLETE (2026-08-30):** ingestion executed per approved plan — 5 sources, 1,924 chunks (Barth 848, Shaw 421, Orr-PDF 241 w/ pages, Morel 227, Robinson 187). HUMAN GATE 2 passed: owner approved a 20-chunk random sample (breadcrumbs correct, Orr pages real; known cosmetic defects: source-OCR typos, ~5% paragraph-split noise). **Scripts FROZEN** — later changes only to repair broken parses, permanently.
+**PHASE 3 COMPLETE (2026-08-30):** MCP server verified end-to-end THROUGH the real MCP plumbing (this session's .mcp.json): 3/3 known-answer questions returned the exact ground-truth passages with correct citations (Orr pp.150-152 first hit). Note: Postgres does not auto-start after container recycle — run `service postgresql start` at session start.
+**PHASE 2 (superseded note):** scripts written and dry-tested (parser fix recorded: PDF header-dropper ate CHAPTER lines). HUMAN GATE 1 answered 2026-08-29: plan approved, Orr ingested as PDF (page citations), txt twin skipped as duplicate. Ingestion running (free-tier Voyage rate limits → small batches, patient 429 retry). Next: HUMAN GATE 2 (owner inspects ~20 random chunks), then freeze scripts.
 
 ## Settled decisions (do not re-litigate; reasoning in PLAN.md §3, §9)
 
