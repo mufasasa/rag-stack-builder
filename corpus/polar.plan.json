@@ -1,0 +1,42 @@
+{
+  "domain": "polar",
+  "folder": "../corpus/files/polar",
+  "files": [
+    {
+      "path": "delong_voyage_of_the_jeannette_v1_1884.txt",
+      "format": "txt",
+      "title": "Delong Voyage Of The Jeannette",
+      "sha256": "e87bf6c860f26a0c1ff26885377a95a6eb9dbc080073af0cc40e190254019fe9",
+      "action": "ingest",
+      "pipeline": "prose-txt-ocr",
+      "probe": {
+        "bytes": 897603,
+        "chapter_headings": 17
+      }
+    },
+    {
+      "path": "greely_three_years_of_arctic_service_v1_1886.txt",
+      "format": "txt",
+      "title": "Greely Three Years Of Arctic Service",
+      "sha256": "07cdf65fb2f75f0e6b463374dee9acdab614b4aeef30bdec76521aebbb07ae7f",
+      "action": "ingest",
+      "pipeline": "prose-txt-ocr",
+      "probe": {
+        "bytes": 1445664,
+        "chapter_headings": 87
+      }
+    },
+    {
+      "path": "mawson_home_of_the_blizzard_1915.txt",
+      "format": "txt",
+      "title": "Mawson Home Of The Blizzard",
+      "sha256": "d21fbcd42ffe5d099893aa44338a1ad1d40e323c650d4e2ec260b352e806f9cc",
+      "action": "ingest",
+      "pipeline": "prose-txt-ocr",
+      "probe": {
+        "bytes": 1339405,
+        "chapter_headings": 56
+      }
+    }
+  ]
+}

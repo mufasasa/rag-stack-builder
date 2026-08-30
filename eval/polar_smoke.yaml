@@ -1,0 +1,18 @@
+# 5-question smoke test for the polar generalization build (Phase 6a).
+# Ground truth quoted from the polar corpus files during the Phase 0 obscurity
+# probe (eval/probe/questions.yaml P1-P5) — already verified against the texts.
+- id: S1
+  question: How did Lieutenant B. E. S. Ninnis die — date, cause, distance from Winter Quarters?
+  ground_truth: 14 December 1912; fell into a crevasse on a sledging journey; ~300 miles east of Winter Quarters. [Mawson]
+- id: S2
+  question: In which regiment did Ninnis hold a commission before the expedition?
+  ground_truth: Royal Fusiliers (Lieutenant). [Mawson]
+- id: S3
+  question: What latitude and longitude did Lockwood's party record at their 1882 farthest north, and whose flag did they unfurl?
+  ground_truth: 83° 24' N, 40° 46' W; the American flag belonging to Mrs. Greely. [Greely]
+- id: S4
+  question: When did the Jeannette leave Havre for San Francisco, and how long did the voyage take?
+  ground_truth: 15 July 1878; 165 days. [De Long]
+- id: S5
+  question: Why was the Aurora forced to leave five men behind for another year?
+  ground_truth: To prosecute a search for Mawson's missing sledging party (Ninnis and Mertz dead, Mawson's return delayed). [Mawson]
