@@ -82,13 +82,20 @@ def _vector_arm(emb: str, domain: str, k: int) -> list:
 
 
 def _keyword_arm(query: str, domain: str, k: int) -> list:
+    # OR the parsed terms: websearch_to_tsquery ANDs every word, which returns
+    # zero rows for question-length queries (found in the Iteration 2 rank
+    # probe — the AND-semantics arm was a silent no-op). ts_rank still rewards
+    # chunks matching more terms, so OR + rank ≈ best-coverage matching.
     return _q(
         _SELECT + """
            FROM chunk c JOIN source s ON s.id = c.source_id
-           WHERE c.domain = %s AND c.tsv @@ websearch_to_tsquery('english', %s)
-           ORDER BY ts_rank(c.tsv, websearch_to_tsquery('english', %s)) DESC
+           CROSS JOIN LATERAL (
+               SELECT replace(websearch_to_tsquery('english', %s)::text,
+                              ' & ', ' | ')::tsquery AS tq) t
+           WHERE c.domain = %s AND c.tsv @@ t.tq
+           ORDER BY ts_rank(c.tsv, t.tq) DESC
            LIMIT %s""",
-        (domain, query, query, k),
+        (query, domain, k),
     )
 
 
